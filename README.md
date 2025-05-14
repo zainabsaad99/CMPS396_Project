@@ -66,7 +66,7 @@ pip install torch transformers optuna streamlit gdown
    ```  
 3. Launch interactive demo:  
    ```bash
-   streamlit run streamlit_app.py
+   streamlit run test_cmps.py
    ```
 
 ---
@@ -90,7 +90,7 @@ pip install torch transformers optuna streamlit gdown
 │   ├── architectures.py
 │   ├── utils.py
 │   └── ...
-├── streamlit_app.py   # Interactive demo
+├── test_cmps.py   # Interactive demo
 ├── requirements.txt
 └── README.md
 ```
