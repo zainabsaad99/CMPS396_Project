@@ -1,0 +1,98 @@
+# 🔐 Large Language Models as Cryptanalysts
+
+**Title:** Large Language Models as Cryptanalysts: Assessing Decryption Capabilities Across Classical Ciphers  
+**Authors:**  
+- Zainab Saad — zas31@mail.aub.edu  
+- Hadi Tfaily — hht08@mail.aub.edu  
+- Aline Hassan — afh29@mail.aub.edu  
+**Institution:** Department of Electrical and Computer Engineering, American University of Beirut
+
+---
+
+## 🧠 Project Overview
+
+This project explores the ability of **Large Language Models (LLMs)**—such as Mistral 7B and other transformer-based architectures—to decrypt classical encryption schemes, including:
+
+- Caesar Cipher  
+- Monoalphabetic Cipher  
+- Vigenère Cipher  
+- Rail Fence Cipher  
+
+We evaluate both **zero-shot**, **few-shot**, and **fully fine-tuned** transformer models for their decryption capabilities. The research investigates whether LLMs can function as cryptanalysts and what implications that has for modern cryptography and cybersecurity.
+
+---
+
+## 🎯 Objectives
+
+- Evaluate the **decryption accuracy** of LLMs across classical ciphers.
+- Train **vanilla transformers** and **enhanced positional models** specifically for decryption tasks.
+- Explore the performance of **zero-shot vs fine-tuned** LLMs.
+- Study the implications of AI-based cryptanalysis for future cryptographic security.
+
+---
+
+## 📚 Ciphers Covered
+
+| Cipher Type        | Description                                                   |
+|--------------------|---------------------------------------------------------------|
+| **Caesar Cipher**  | Each letter is shifted by a fixed number of positions.        |
+| **Monoalphabetic** | Each letter maps to another using a fixed random permutation. |
+| **Vigenère Cipher**| Uses a keyword to apply a series of Caesar shifts.            |
+| **Rail Fence**     | A transposition cipher writing text in zigzag rails.          |
+
+---
+
+## 🏗️ Architecture
+
+- Fine-tuned transformer models using **PyTorch**
+- Enhanced positional embeddings for Caesar cipher
+- Modular configuration system for easy experimentation
+- Training on Google Colab with **NVIDIA A100/L4 GPUs**
+- Optimization using **Optuna**, mixed precision (FP16), and gradient checkpointing
+
+---
+
+## 📦 Libraries and Tools
+
+- **PyTorch** — Model architecture & training
+- **Optuna** — Hyperparameter tuning
+- **Hugging Face Transformers** — Model & tokenizer support
+- **Streamlit** — Web-based demo for live decryption
+- **gdown** — Download model weights from Google Drive
+
+---
+
+## 🧪 Evaluation Metrics
+
+- **Token-Level Accuracy** — Exact match rate per token
+- **Character-Level Accuracy** — Fine-grained match accuracy
+- **Decryption Latency** — Time taken to produce output
+- **Sequence Length Effects** — Impact of longer input texts
+
+---
+
+## 📁 Project Structure
+
+├── streamlit_app.py # Streamlit demo interface
+├── models/ # Folder for pretrained models (downloaded on demand)
+├── data/ # Datasets used for training/fine-tuning
+├── src/ # Core model architectures and utilities
+├── README.md # This documentation
+├── requirements.txt # Python dependencies
+
+
+---
+
+## 🚀 Running the Streamlit App
+
+You can run the interactive decryption demo locally using Streamlit.
+
+### 1. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
+---
+##  Start the Streamlit App
+
+streamlit run streamlit_app.py
