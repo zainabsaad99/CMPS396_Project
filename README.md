@@ -1,9 +1,7 @@
 # 🔐 Large Language Models as Cryptanalysts  
 **Decrypting Classical Ciphers with AI**  
 
-![Header: Abstract cryptographic visualization](https://via.placeholder.com/800x200/1a1a2e/FFFFFF?text=LLM+Cryptanalysis)  
 
----
 
 ## 📜 Research Overview  
 **Title:** *Large Language Models as Cryptanalysts: Assessing Decryption Capabilities Across Classical Ciphers*  
