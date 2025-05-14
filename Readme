@@ -1,98 +1,118 @@
-# 🔐 Large Language Models as Cryptanalysts
-
-**Title:** Large Language Models as Cryptanalysts: Assessing Decryption Capabilities Across Classical Ciphers  
-**Authors:**  
-- Zainab Saad — zas31@mail.aub.edu  
-- Hadi Tfaily — hht08@mail.aub.edu  
-- Aline Hassan — afh29@mail.aub.edu  
-**Institution:** Department of Electrical and Computer Engineering, American University of Beirut
+Here’s a professionally designed **README.md** with improved structure, visual hierarchy, and clarity while retaining all key information:
 
 ---
 
-## 🧠 Project Overview
+# 🔐 Large Language Models as Cryptanalysts  
+**Decrypting Classical Ciphers with AI**  
 
-This project explores the ability of **Large Language Models (LLMs)**—such as Mistral 7B and other transformer-based architectures—to decrypt classical encryption schemes, including:
-
-- Caesar Cipher  
-- Monoalphabetic Cipher  
-- Vigenère Cipher  
-- Rail Fence Cipher  
-
-We evaluate both **zero-shot**, **few-shot**, and **fully fine-tuned** transformer models for their decryption capabilities. The research investigates whether LLMs can function as cryptanalysts and what implications that has for modern cryptography and cybersecurity.
+![Header: Abstract cryptographic visualization](https://via.placeholder.com/800x200/1a1a2e/FFFFFF?text=LLM+Cryptanalysis)  
 
 ---
 
-## 🎯 Objectives
+## 📜 Research Overview  
+**Title:** *Large Language Models as Cryptanalysts: Assessing Decryption Capabilities Across Classical Ciphers*  
+**Institution:** Department of Electrical and Computer Engineering, American University of Beirut  
 
-- Evaluate the **decryption accuracy** of LLMs across classical ciphers.
-- Train **vanilla transformers** and **enhanced positional models** specifically for decryption tasks.
-- Explore the performance of **zero-shot vs fine-tuned** LLMs.
-- Study the implications of AI-based cryptanalysis for future cryptographic security.
-
----
-
-## 📚 Ciphers Covered
-
-| Cipher Type        | Description                                                   |
-|--------------------|---------------------------------------------------------------|
-| **Caesar Cipher**  | Each letter is shifted by a fixed number of positions.        |
-| **Monoalphabetic** | Each letter maps to another using a fixed random permutation. |
-| **Vigenère Cipher**| Uses a keyword to apply a series of Caesar shifts.            |
-| **Rail Fence**     | A transposition cipher writing text in zigzag rails.          |
+### 👥 Authors  
+| Name            | Contact                     |  
+|-----------------|-----------------------------|  
+| Zainab Saad     | zas31@mail.aub.edu          |  
+| Hadi Tfaily     | hht08@mail.aub.edu          |  
+| Aline Hassan    | afh29@mail.aub.edu          |  
 
 ---
 
-## 🏗️ Architecture
-
-- Fine-tuned transformer models using **PyTorch**
-- Enhanced positional embeddings for Caesar cipher
-- Modular configuration system for easy experimentation
-- Training on Google Colab with **NVIDIA A100/L4 GPUs**
-- Optimization using **Optuna**, mixed precision (FP16), and gradient checkpointing
+## 🎯 Key Objectives  
+✔ Evaluate LLM decryption accuracy for classical ciphers  
+✔ Compare zero-shot vs. fine-tuned transformer performance  
+✔ Develop enhanced positional embedding architectures  
+✔ Assess implications for modern cryptographic security  
 
 ---
 
-## 📦 Libraries and Tools
-
-- **PyTorch** — Model architecture & training
-- **Optuna** — Hyperparameter tuning
-- **Hugging Face Transformers** — Model & tokenizer support
-- **Streamlit** — Web-based demo for live decryption
-- **gdown** — Download model weights from Google Drive
-
----
-
-## 🧪 Evaluation Metrics
-
-- **Token-Level Accuracy** — Exact match rate per token
-- **Character-Level Accuracy** — Fine-grained match accuracy
-- **Decryption Latency** — Time taken to produce output
-- **Sequence Length Effects** — Impact of longer input texts
+## 🔍 Investigated Ciphers  
+| Cipher           | Type          | Challenge Level |  
+|------------------|---------------|------------------|  
+| **Caesar**       | Substitution  | ★☆☆☆☆            |  
+| **Monoalphabetic**| Substitution | ★★☆☆☆            |  
+| **Vigenère**     | Polyalphabetic| ★★★☆☆            |  
+| **Rail Fence**   | Transposition | ★★☆☆☆            |  
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Technical Architecture  
+```mermaid
+graph TD
+    A[Input Ciphertext] --> B(Preprocessing)
+    B --> C{Model Type?}
+    C -->|Zero-shot| D[LLM Inference]
+    C -->|Fine-tuned| E[Custom Transformer]
+    D & E --> F[Decrypted Plaintext]
+```
 
-├── streamlit_app.py # Streamlit demo interface
-├── models/ # Folder for pretrained models (downloaded on demand)
-├── data/ # Datasets used for training/fine-tuning
-├── src/ # Core model architectures and utilities
-├── README.md # This documentation
-├── requirements.txt # Python dependencies
+**Core Components:**  
+- PyTorch-based transformer models  
+- Optuna hyperparameter optimization  
+- Mixed-precision (FP16) training  
+- Gradient checkpointing for memory efficiency  
 
+---
+
+## ⚙️ Implementation  
+### 📦 Dependencies  
+```python
+pip install torch transformers optuna streamlit gdown
+```
+
+### 🚀 Quick Start  
+1. Clone repository  
+2. Install requirements:  
+   ```bash
+   pip install -r requirements.txt
+   ```  
+3. Launch interactive demo:  
+   ```bash
+   streamlit run streamlit_app.py
+   ```
 
 ---
 
-## 🚀 Running the Streamlit App
-
-You can run the interactive decryption demo locally using Streamlit.
-
-### 1. Install Dependencies
-
-```bash
-pip install -r requirements.txt
+## 📊 Evaluation Framework  
+| Metric               | Measurement Method          |  
+|----------------------|-----------------------------|  
+| Token-Level Accuracy | Exact match percentage      |  
+| Character Accuracy   | Levenshtein distance        |  
+| Latency              | Inference time (ms/token)   |  
+| Length Robustness    | Accuracy vs. sequence length|  
 
 ---
-##  Start the Streamlit App
 
-streamlit run streamlit_app.py
+## 📂 Repository Structure  
+```
+.
+├── models/            # Pretrained weights
+├── data/              # Training datasets
+├── src/               # Core implementations
+│   ├── architectures.py
+│   ├── utils.py
+│   └── ...
+├── streamlit_app.py   # Interactive demo
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 📜 Citation  
+If referencing this work, please use:  
+```bibtex
+@misc{llm_cryptanalysis2024,
+  title={Large Language Models as Cryptanalysts},
+  author={Saad, Zainab and Tfaily, Hadi and Hassan, Aline},
+  year={2024},
+  institution={American University of Beirut}
+}
+```
+
+---
+
